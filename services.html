@@ -163,7 +163,17 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
         </nav>
       
         <!-- Background Image -->
-        
+        <div class="side-menu" id="side-menu">
+            <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
       </section>
     <style>
         .hero-section {
@@ -268,16 +278,76 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
   }
 }
 
+/* Sidebar Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Hide off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+}
+
+.close-btn {
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+/* Active state */
+.side-menu.active {
+  right: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
     
     </style>  
+ 
     <script>
-       const menuIcon = document.getElementById('menu-icon');
-const navLinks = document.getElementById('nav-links');
+        const menuIcon = document.getElementById('menu-icon');
+const sideMenu = document.getElementById('side-menu');
+const closeBtn = document.getElementById('close-btn');
 
 menuIcon.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+  sideMenu.classList.add('active');
 });
- 
+
+closeBtn.addEventListener('click', () => {
+  sideMenu.classList.remove('active');
+});
+
     </script>
 
 <div class="wp-block wp-block-kubio-hero  position-relative wp-block-kubio-hero__outer style-J6FPNZyUrn-outer style-local-22-outer d-flex h-section-global-spacing align-items-lg-center align-items-md-center align-items-center" data-kubio="kubio/hero" id="hero"><div class="background-wrapper"><div class="background-layer background-layer-media-container-lg"><div class="overlay-layer"><div class="overlay-image-layer" style="background-color:#11121a;opacity:0.60"></div></div></div><div class="background-layer background-layer-media-container-md"><div class="overlay-layer"><div class="overlay-image-layer" style="background-color:#11121a;opacity:0.60"></div></div></div><div class="background-layer background-layer-media-container"><div class="overlay-layer"><div class="overlay-image-layer" style="background-color:#11121a;opacity:0.60"></div></div></div></div><div class="position-relative wp-block-kubio-hero__inner style-J6FPNZyUrn-inner style-local-22-inner h-navigation-padding h-section-grid-container h-section-boxed-container">		<script type='text/javascript'>

@@ -187,153 +187,208 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
       <div class="logo">
         <img src="./wp-content/uploads/2025/02/logo.png" alt="Logo">
       </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  
-    <!-- Background Image -->
+     
+        
+  <!-- Menu Icon -->
+  <div class="menu-icon" id="menu-icon">
+    &#9776; <!-- Hamburger icon -->
+  </div>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      
+        <!-- Background Image -->
+        <div class="side-menu" id="side-menu">
+            <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </section>
+    <style>
+        .hero-section {
+      position: relative;
+      width: 90%;
+      height: 90px; /* Adjust as needed */
+    }
     
-  </section>
-<style>
-    .hero-section {
-  position: relative;
-  width: 90%;
-  height: 90px; /* Adjust as needed */
-}
-
-.hero-image img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-}
-
+    .hero-image img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    
+    .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 10px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.6); /* semi-transparent white */
+    }
+    
+    .navbar .logo img {
+      /* width: 100px; */
+      /* width: 140px;   Fixed width */
+      /* height: 60px;   Fixed height */
+      width: 90.49px;
+      height: 72.99px;
+      object-fit: contain; 
+      
+    }
+    .logo {
+      margin-left: 100px; /* Pushes it to the left */
+      align-items: center;
+      display: flex;
+    }
+    
+    
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-links li a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      padding: 8px 12px;
+      transition: color 0.3s ease;
+      /* font-weight: bold; */
+    }
+    .nav-links a:hover {
+      color: #d11a2a; /* On hover color */
+    }
+    /* Navbar styles */
 .navbar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 10px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.6); /* semi-transparent white */
+  padding: 15px 30px;
+  position: relative;
+  background-color: #fff;
 }
-
-.navbar .logo img {
-  /* width: 100px; */
-  /* width: 140px;   Fixed width */
-  /* height: 60px;   Fixed height */
-  width: 90.49px;
-  height: 72.99px;
-  object-fit: contain; 
-  
-}
-.logo {
-  margin-left: 100px; /* Pushes it to the left */
-  align-items: center;
-  display: flex;
-}
-
 
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 30px;
+  list-style: none;
 }
 
-.nav-links li a {
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* Sidebar Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Hide off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
   text-decoration: none;
-  color: #000;
   font-size: 18px;
-  padding: 8px 12px;
-  transition: color 0.3s ease;
-  /* font-weight: bold; */
-}
-.nav-links a:hover {
-  color: #d11a2a; /* On hover color */
+  color: #333;
 }
 
-</style>  
-<style>
-    /* Ensure the menu button is always visible */
-.kubio-offscreen-icon-wrapper {
-    display: block !important;
-}
-.kubio-offscreen-icon-wrapper:hover svg path {
-    fill: black !important; /* Change the icon color to black on hover */
+.close-btn {
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
 }
 
-
-
-
-/* Ensure the offscreen menu works on desktop too */
-@media (min-width: 1024px) {
-    #kubio-offscreen-67c2a41c0f64f {
-        display: block !important;
-        position: fixed;
-        top: 0;
-        right: -300px;
-        width: 300px;
-        height: 100vh;
-        background-color: black;
-        transition: right 0.3s ease-in-out;
-    }
-
-    #kubio-offscreen-67c2a41c0f64f.show {
-        right: 0;
-    }
-
-    /* Show overlay */
-    #kubio-offscreen-67c2a41c0f64f-overlay {
-        display: block !important;
-    }
+/* Active state */
+.side-menu.active {
+  right: 0;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
 
-
-/* Show regular menu in desktop, hide in mobile */
-@media (min-width: 1024px) {
-    .kubio-offscreen {
-        display: none !important;
-    }
-    .desktop-menu {
-        display: block !important;
-    }
+  .navbar ul {
+    display: none;
+  }
 }
 
-@media (max-width: 1023px) {
-    .desktop-menu {
-        display: none !important;
-    }
-}
+    
+    </style>  
+ 
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+const sideMenu = document.getElementById('side-menu');
+const closeBtn = document.getElementById('close-btn');
 
+menuIcon.addEventListener('click', () => {
+  sideMenu.classList.add('active');
+});
 
+closeBtn.addEventListener('click', () => {
+  sideMenu.classList.remove('active');
+});
 
-
-
-
-@media (min-width: 992px) {
-    #kubio-offscreen-67c2a41c0f64f {
-        display: block !important;
-        position: static !important;
-        transform: none !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    #kubio-offscreen-67c2a41c0f64f-overlay {
-        display: none !important; /* Hide overlay */
-    }
-}
-
-
-
-
-
-</style>
+    </script>
 
 
 
